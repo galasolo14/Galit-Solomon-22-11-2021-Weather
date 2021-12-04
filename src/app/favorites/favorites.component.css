@@ -1,0 +1,9 @@
+.favoritesHeader {
+    text-align: center;
+}
+
+.favoritesCities {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

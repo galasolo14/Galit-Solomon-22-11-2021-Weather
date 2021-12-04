@@ -1,0 +1,24 @@
+<div class="appBar">
+    <p>
+        <mat-toolbar>
+          <span>Weather App</span>
+          <span class="spacer"></span>
+          <button mat-button color="primary" [ngClass]="{'mat-raised-button': !showFavorites}" (click)="onClickCity()">
+            City
+          </button>
+          <button mat-button color="primary" [ngClass]="{'mat-raised-button': showFavorites}" (click)="onClickFavorites()">
+            Favorites
+          </button>
+        </mat-toolbar>
+      </p>
+</div>
+<mat-divider></mat-divider>
+
+<div *ngIf="!showFavorites" [ngClass]="{'city': !showFavorites}">
+    <app-city [allfavorites]="favorites" (fetchFavorites)="getNewFavotirs()" ></app-city>
+</div>
+<div *ngIf="showFavorites" [ngClass]="{'favorites': showFavorites}">
+    <app-favorites [allfavorites]="favorites" ></app-favorites>
+</div>
+
+

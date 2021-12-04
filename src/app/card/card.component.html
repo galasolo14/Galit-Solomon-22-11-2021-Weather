@@ -1,0 +1,35 @@
+
+<div class="cards" *ngFor="let day of days; index as idx">
+    <mat-card class="card">
+        <mat-card-title> {{newOeder[idx]}}</mat-card-title>
+        <mat-card-subtitle> 
+            {{day.Temperature.Maximum.Value}}
+            {{day.Temperature.Maximum.Unit}}
+            -
+            {{day.Temperature.Minimum.Value}}
+            {{day.Temperature.Minimum.Unit}}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <img src="/assets/img/{{day.Day.Icon}}.png">
+        </mat-card-content>
+        <mat-card-footer>{{day.Day.IconPhrase}}</mat-card-footer>
+    </mat-card>
+
+</div>
+
+<div  class="cards" *ngFor="let city of citis">
+    <mat-card class="card">
+            <mat-card-title> {{city.name}}</mat-card-title>
+    <mat-card-subtitle> 
+        {{city.temp}} {{city.unit}} 
+    </mat-card-subtitle>
+    <mat-card-content>
+        <img src="/assets/img/{{city.icon}}.png">
+    </mat-card-content>
+    <mat-card-footer>{{city.text}} </mat-card-footer>
+    </mat-card>
+</div>
+
+
+
+

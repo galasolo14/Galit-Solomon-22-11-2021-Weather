@@ -1,0 +1,39 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search {
+    text-align: center;
+    margin-top: 1%;
+}
+
+.left-right {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cityName{
+    font-size: 20px;
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.favorite {
+    color: red;
+}
+
+.notFavorite {
+    color: gray;
+}
+
+.selectedType {
+    width: 75px;
+}

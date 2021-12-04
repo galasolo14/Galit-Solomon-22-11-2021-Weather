@@ -1,0 +1,42 @@
+<div>
+    <div class="search">
+        <mat-form-field>
+            <mat-label>Search for city</mat-label>
+            <input matInput type="text" [matAutocomplete]="auto" (keyup)="onSearch($event)">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFunc">
+                <mat-option *ngFor="let option of options; index as idx" [value]="option" (click)="getCity(idx)">
+                    {{option.LocalizedName}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+    
+    <div class="left-right">
+        <div class="cityName">
+            <div> {{currentCity.name}}</div>
+            <img src="/assets/img/{{apiForcast.icon}}.png">
+        </div>
+       
+        <div class="actions">
+            <mat-form-field appearance="fill" class="selectedType">
+                <mat-select [(value)]="selected">
+                  <mat-option value="c" (click)="changeUnit()">°C</mat-option>
+                  <mat-option value="f" (click)="changeUnit()">°F</mat-option>
+                </mat-select>
+            </mat-form-field>
+    
+            <button mat-icon-button color="warn" (click)="clickOnFavorites()" [ngClass]="{'notFavorite': !isFavorites}" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+    </div>
+    
+    <div class="center-text">{{apiForcast.iconName}}</div>
+    
+    <div class="cards" >
+        <app-card [days]="fiveDays" ></app-card>
+    </div>
+</div>
+
+
+
